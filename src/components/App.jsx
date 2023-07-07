@@ -1,16 +1,18 @@
+import { getMovieReviews } from "service/movies-service";
+import { useState } from "react";
+
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+  const [query, setQuery] = useState('');
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await getMovieReviews(query)
+  };
+
+  return <>
+    <form onSubmit={onSubmit}>
+      <input type="text" onChange={(e) => setQuery(e.target.value)}></input>
+      <button type="submit">Click</button>
+    </form>
+  </>
 };
