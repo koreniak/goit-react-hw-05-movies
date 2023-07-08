@@ -3,5 +3,5 @@ export const routes = {
   MOVIES: '/movies',
   MOVIE_DETAILS: '/movies/:movieId',
   CAST: '/movies/:movieId/cast',
-  REWIEWS: '/movies/:movieId/reviews'
+  REVIEWS: '/movies/:movieId/reviews'
 };

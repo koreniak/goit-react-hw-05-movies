@@ -1,8 +1,9 @@
 export const transformMovieRewiews = ({ results }) => {
-  return results.map(({ author, content }) =>
+  return results.map(({ author, content, id }) =>
   ({
     author,
-    content
+    content,
+    id
   })
   );
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { transformMovies, transformMovieById, transformMovieCast, transformMovieRewiews } from 'components/helpers';
+import { transformMovies, transformMovieById, transformMovieCast, transformMovieRewiews } from 'helpers';
 
 const options = {
   method: 'GET',
@@ -14,34 +14,34 @@ const options = {
 export const getTrandingMovies = async () => {
   const { data } = await axios.get('/trending/movie/week', options)
   const movies = transformMovies(data);
-  console.log(movies)
+
   return movies;
 };
 
 export const getSearchedMovies = async (query) => {
   const { data } = await axios.get(`/search/movie?query=${query}`, options)
   const movies = transformMovies(data);
-  console.log(movies);
+
   return movies;
 };
 
 export const getMovieDetails = async (id) => {
   const { data } = await axios.get(`/movie/${id}`, options)
   const movie = transformMovieById(data);
-  console.log(movie);
+
   return movie;
 };
 
 export const getMovieCredits = async (id) => {
   const { data } = await axios.get(`/movie/${id}/credits`, options)
   const cast = transformMovieCast(data);
-  console.log(cast);
+
   return cast;
 };
 
 export const getMovieReviews = async (id) => {
   const { data } = await axios.get(`/movie/${id}/reviews`, options)
   const reviews = transformMovieRewiews(data);
-  console.log(reviews);
+
   return reviews;
 };
