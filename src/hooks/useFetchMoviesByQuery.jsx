@@ -28,5 +28,5 @@ export const useFetchMoviesByQuery = (query) => {
     }
     fetchData();
   }, [query]);
-  return { movies, error, isLoading, setMovies, setError };
+  return { movies, error, isLoading };
 };

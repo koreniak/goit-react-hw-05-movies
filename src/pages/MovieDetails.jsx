@@ -16,7 +16,7 @@ const MovieDetails = () => {
       <div>
         {error && <p>{error}</p>}
         {isLoading && <p>Is Loading...</p>}
-        <MovieInfo movie={movie} />
+        {movie && <MovieInfo movie={movie} />}
       </div>
       <AdditionalList>
         <li><AdditionalLink to="cast">Cast</AdditionalLink></li>

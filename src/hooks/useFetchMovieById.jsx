@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieDetails } from "service/movies-service";
 
 export const useFetchMovieById = () => {
-  const [movie, setMovies] = useState({});
+  const [movie, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
 

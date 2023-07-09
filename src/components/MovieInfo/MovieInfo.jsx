@@ -3,7 +3,7 @@ import { MovieField, Info, MovieTitle, Text, SubTitle } from './MovieInfo.styled
 
 const MovieInfo = ({ movie: { title, userScore, overview, genres, releaseDate, poster } }) => (
   <MovieField>
-    <img src={poster} alt={title} />
+    <img src={poster} alt={title} width="320"/>
     <Info>
       <MovieTitle>{`${title} (${releaseDate})`}</MovieTitle>
       <Text>{`User Score: ${userScore}`}</Text>
@@ -16,7 +16,14 @@ const MovieInfo = ({ movie: { title, userScore, overview, genres, releaseDate, p
 );
 
 MovieInfo.propTypes = {
-  movie: PropTypes.object.isRequired
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    userScore: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    genres: PropTypes.string.isRequired,
+    releaseDate: PropTypes.number.isRequired,
+    poster: PropTypes.string.isRequired,
+  })
 };
 
 export default MovieInfo;

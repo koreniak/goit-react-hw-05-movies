@@ -9,7 +9,7 @@ const MovieReviews = () => {
     <div>
       {error && <p>{error}</p>}
       {isLoading && <p>Is Loading...</p>}
-      {reviews.length > 0 ? <MovieAddContainer>
+      {!isLoading && reviews.length > 0 ? <MovieAddContainer>
         {
           reviews.map(({ author, content, id }) => <li key={id}>
             <ReviewsTitle>{`Author: ${author}`}</ReviewsTitle>
