@@ -12,7 +12,7 @@ const MovieCast = () => {
       {!isLoading && cast.length > 0 ? <MovieAddContainer>
         {
           cast.map(({ character, credit_id, name, photo }) => <MovieCastItem key={credit_id}>
-            <img src={photo} alt={name} width="240"/>
+            <img src={photo} alt={name} width="60"/>
             <Text>{name}</Text>
             <Text>{`Character: ${character}`}</Text>
           </MovieCastItem>)
